@@ -10,6 +10,7 @@ ITパスポート試験の学習サイト **「ITパスポート用語ドリル�
 - 用語の単語帳（カード・4択・書いて答える・復習・一覧）、用語ごとの解説ページ、分野別ミニテスト（`test.html`）、略語クイズと早見表（`abbr.html`）
 - FE と同じ用語には `fe` で FE用語ドリルの id を持たせ、用語ページから FE の同じ用語へリンクする
 - お問い合わせは FE と同じ Google フォーム https://forms.gle/s4yB1xMbcoRqZps2A
+- アクセス解析: GA4（測定ID `G-JTV1QKBK5S`。FE とは別のプロパティ「ITパスポート用語ドリル」）、Google Search Console（URL プレフィックス、`static/google353b7848d84cdd22.html` で確認。サイトマップ送信済み）
 - Instagram・LINE ボットとのつながりはまだ作っていない（FE 側の `line-bot/` が担当する予定）
 
 ## よく使うコマンド
