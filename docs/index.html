@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ITパスポート用語ドリル｜ITパスポート試験の用語を無料で覚える単語帳</title>
+<meta name="description" content="ITパスポート試験の用語を、カード・4択クイズ・書いて答える問題・分野別ミニテスト・略語クイズで覚えられる無料の単語帳サイトです。ITが初めての人にも分かるやさしい説明の解説ページもあります。">
+<link rel="canonical" href="https://yuki-fe.github.io/ip-drill/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ITパスポート用語ドリル｜ITパスポート試験の用語を無料で覚える単語帳">
+<meta property="og:description" content="ITパスポート試験の用語を、カード・4択クイズ・書いて答える問題・分野別ミニテスト・略語クイズで覚えられる無料の単語帳サイトです。ITが初めての人にも分かるやさしい説明の解説ページもあります。">
+<meta property="og:url" content="https://yuki-fe.github.io/ip-drill/">
+<meta property="og:site_name" content="ITパスポート用語ドリル">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "ITパスポート用語ドリル", "url": "https://yuki-fe.github.io/ip-drill/", "description": "ITパスポート試験の用語を、カード・4択クイズ・書いて答える問題・分野別ミニテスト・略語クイズで覚えられる無料の単語帳サイトです。ITが初めての人にも分かるやさしい説明の解説ページもあります。"}</script>
+</head>
+<body class="home" data-root="">
+<header class="site-head">
+  <a class="brand" href="index.html">ITパスポート用語ドリル</a>
+  <nav class="site-nav" aria-label="サイト内">
+    <a href="index.html">用語ドリル</a>
+    <a href="test.html">ミニテスト</a>
+    <a href="abbr.html">略語</a>
+    <a href="terms/index.html">用語一覧</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+</header>
+
+<div class="home-features">
+  <a class="home-feature" href="test.html"><span class="tag">ミニテスト</span><b>3分野から20問。分野ごとの正答率がわかる</b><span class="go">挑戦する →</span></a>
+  <a class="home-feature" href="abbr.html"><span class="tag">略語</span><b>KPI・SLA・DNS…略語142語のクイズと早見表</b><span class="go">覚える →</span></a>
+</div>
+<div class="app">
+  <aside class="side">
+    <div>
+      <p class="label">学び方</p>
+      <nav class="modes" role="tablist" id="modes" aria-label="学び方"></nav>
+    </div>
+    <div>
+      <p class="label">分野と覚えた数</p>
+      <div class="fields" id="fields"></div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="toolbar" id="toolbar"></div>
+    <section class="panel" id="panel"><noscript><p class="empty">この学習機能を使うには JavaScript を有効にしてください。<a href="terms/index.html">用語一覧</a>はそのまま読めます。</p></noscript></section>
+    <p class="save-note">進み具合はこのブラウザに保存されます。<button id="reset" type="button">進み具合をリセット</button></p>
+  </main>
+</div>
+
+<section class="prose home-intro">
+  <h1>ITパスポート用語ドリル<small>ITパスポート試験の用語を無料で覚える単語帳</small></h1>
+  <p>ITパスポート試験に出てくる用語を、665語収録しています。ITを初めて学ぶ人にも分かるように、やさしい言葉で説明しています。登録は不要で、スマホでもパソコンでも無料で使えます。</p>
+  <h2>学び方</h2>
+  <dl class="howto">
+    <dt>カード</dt><dd>用語を見て意味を思い出し、裏返して確かめます。「意味 → 用語」の向きにも切り替えられます。</dd>
+    <dt>4択クイズ</dt><dd>本試験と同じア〜エの選択肢から答えを選びます。同じ分野の用語がひっかけとして並びます。</dd>
+    <dt>書いて答える</dt><dd>説明を読んで、用語を自分で入力します。ひらがなや英字の略語でも正解になります。</dd>
+    <dt>復習</dt><dd>「まだ」を押した用語や、クイズで間違えた用語だけを集めて、学習し直せます。</dd>
+    <dt>ミニテスト</dt><dd>ストラテジ系・マネジメント系・テクノロジ系から、本番に近い割合で20問を出します。分野ごとの正答率がわかります。</dd>
+    <dt>略語クイズ</dt><dd>KPI・SLA・DNS など、アルファベットの略語の意味を覚えます。</dd>
+  </dl>
+  <h2>ITパスポート試験の分野</h2>
+  <p>試験は100問で、ストラテジ系（経営・法律など）が約35問、マネジメント系（開発・プロジェクト管理など）が約20問、テクノロジ系（ITの技術）が約45問出ます。合格するには、<b>総合点に加えて、3つの分野それぞれで基準点以上</b>を取る必要があります。苦手な分野を作らないことが大切です。</p>
+  <ul class="field-list"><li><a href="terms/index.html#S">ストラテジ系</a><span class="mono">284語</span></li><li><a href="terms/index.html#M">マネジメント系</a><span class="mono">68語</span></li><li><a href="terms/index.html#T">テクノロジ系</a><span class="mono">313語</span></li></ul>
+  <p>すべての用語は<a href="terms/index.html">用語一覧</a>から、1語ずつ解説ページで読めます。</p>
+  
+  <h2>次は基本情報技術者試験へ</h2>
+  <p>ITパスポートの次の段階として、基本情報技術者試験（FE）を目指す人も多くいます。用語ページの「FEでも出る」から、姉妹サイトの<a href="https://yuki-fe.github.io/fe-drill/">FE用語ドリル</a>の同じ用語の解説に進めます。FE用語ドリルには、プログラムの動きを1行ずつ見られる問題もあります。</p>
+  <p class="muted">試験の仕組みや出題範囲は変わることがあります。受験の前に、試験の実施団体のサイトで最新の情報を確認してください。</p>
+</section>
+
+<footer class="site-foot">
+  <nav aria-label="フッター">
+    <a href="terms/index.html">用語一覧</a>
+    <a href="about.html">運営者情報</a>
+    <a href="privacy.html">プライバシーポリシー・免責事項</a>
+  </nav>
+  <p>姉妹サイト: <a href="https://yuki-fe.github.io/fe-drill/">FE用語ドリル</a>（基本情報技術者試験の用語とプログラムの問題）</p>
+  <p>ITパスポート試験は、独立行政法人 情報処理推進機構（IPA）が実施する国家試験です。当サイトはIPAとは関係のない個人の学習サイトです。</p>
+  <p>© 2026 Yuki-fe</p>
+</footer>
+<script src="assets/terms.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
