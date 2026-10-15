@@ -4,7 +4,7 @@ ITパスポート試験の用語を覚える静的サイトです。`python buil
 
 姉妹サイト「FE用語ドリル」（基本情報技術者試験、リポジトリ `yuki-fe/fe-drill`）の仕組みをもとに作っています。
 
-- 公開URL（予定）: https://yuki-fe.github.io/ip-drill/
+- 公開URL: https://ip.yogo-drill.com/
 
 ## フォルダの中身
 

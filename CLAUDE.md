@@ -6,7 +6,7 @@
 
 ITパスポート試験の学習サイト **「ITパスポート用語ドリル」**。運営者は Yuki-fe（個人・副業）。姉妹サイト「FE用語ドリル」（デスクトップの `claude FE対策サイト`、リポジトリ `yuki-fe/fe-drill`）の仕組みをもとに作った。
 
-- **サイト**: https://yuki-fe.github.io/ip-drill/ （GitHub Pages。リポジトリ `yuki-fe/ip-drill` の `main` ブランチの `/docs`）
+- **サイト**: https://ip.yogo-drill.com/ （独自ドメイン。旧 https://yuki-fe.github.io/ip-drill/ は自動で転送。GitHub Pages。リポジトリ `yuki-fe/ip-drill` の `main` ブランチの `/docs`）
 - 用語の単語帳（カード・4択・書いて答える・復習・一覧）、用語ごとの解説ページ、分野別ミニテスト（`test.html`）、略語クイズと早見表（`abbr.html`）
 - FE と同じ用語には `fe` で FE用語ドリルの id を持たせ、用語ページから FE の同じ用語へリンクする
 - お問い合わせは FE と同じ Google フォーム https://forms.gle/s4yB1xMbcoRqZps2A

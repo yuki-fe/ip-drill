@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yuki-fe.github.io/ip-drill/sitemap.xml
+Sitemap: https://ip.yogo-drill.com/sitemap.xml
