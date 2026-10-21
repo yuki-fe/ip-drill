@@ -28,6 +28,8 @@ SITE = config["site_name"]
 FE_URL = config.get("fe_url", "").rstrip("/")
 TODAY = date.today().isoformat()
 ABBRS = [t for t in terms if t.get("abbr")]
+# 用語の「動く図」（make_figs.py が作る）。用語 id → {"title", "steps"}
+FIGS = json.loads((ROOT / "data" / "figs.json").read_text(encoding="utf-8")) if (ROOT / "data" / "figs.json").exists() else {}
 
 
 # ---------- 用語の文字列処理 ----------
@@ -212,7 +214,7 @@ def build_home():
 """
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": BASE + "/", "description": config["description"]}]
     page("index.html", f"{SITE}｜{config['tagline']}", config["description"], body, "", "home", ld,
-         '<script src="assets/terms.js"></script>\n<script src="assets/app.js"></script>')
+         '<script src="assets/terms.js"></script>\n<script src="assets/fig.js"></script>\n<script src="assets/app.js"></script>')
 
 
 def related_terms(t, n=6):
@@ -259,6 +261,12 @@ def build_term(t, prev, nxt):
     fe_html = (f'<section class="fe-box"><h2>基本情報技術者試験（FE）でも出る用語です</h2>'
                f'<p>ITパスポートの次に受ける人が多い基本情報技術者試験でも、この用語が出ます。姉妹サイトで、FE向けの説明も読めます。</p>'
                f'<p><a class="btn" href="{escape(fe)}">FE用語ドリルで「{escape(t["term"])}」を見る</a></p></section>') if fe else ""
+    fig = FIGS.get(t["id"])
+    # 図の SVG はページに直接入れる（fig.js が「‹」「›」を付ける）
+    fig_svg = (ROOT / "static" / "figs" / f'{t["id"]}.svg').read_text(encoding="utf-8") if fig else ""
+    fig_html = (f'<section class="fig-box"><h2>図で見る</h2><p class="fig-title">{escape(fig["title"])}（› を押すか、図をタップすると進みます）</p>'
+                f'<div class="fig-player">{fig_svg}</div>'
+                '<ol class="fig-steps">' + "".join(f"<li>{escape(s)}</li>" for s in fig["steps"]) + "</ol></section>") if fig else ""
     abbr_cta = '<a class="btn" href="../abbr.html">略語クイズに挑戦</a>' if t.get("abbr") else '<a class="btn" href="../index.html#type">書いて答える問題に挑戦</a>'
     body = f"""
 <main class="prose term-page">
@@ -271,6 +279,7 @@ def build_term(t, prev, nxt):
     <a class="btn primary" href="../index.html#card">カードで練習する</a>
     {abbr_cta}
   </div>
+  {fig_html}
   <section>
     <h2>同じ分野の用語</h2>
     <ul class="related">{related_html}</ul>
@@ -289,7 +298,7 @@ def build_term(t, prev, nxt):
     ]
     short = t["desc"] if len(t["desc"]) <= 100 else t["desc"][:99] + "…"
     page(f"terms/{t['id']}.html", f"{t['term']}とは？意味と覚え方｜ITパスポート試験の用語｜{SITE}",
-         f"{t['term']}（{field}・{t['sub']}）: {short}", body, "../", "", ld, '<script src="../assets/term.js"></script>')
+         f"{t['term']}（{field}・{t['sub']}）: {short}", body, "../", "", ld, '<script src="../assets/term.js"></script>' + ('\n<script src="../assets/fig.js"></script>' if fig else ""))
 
 
 def build_index():
@@ -465,7 +474,7 @@ def build_meta_files():
     host = urlparse(BASE).hostname or ""
     if host and not host.endswith("github.io"):
         (OUT / "CNAME").write_text(host + "\n", encoding="utf-8")
-    data = [{"id": t["id"], "f": t["field"], "sub": t["sub"], "term": t["term"], "desc": t["desc"], **({"abbr": t["abbr"]} if t.get("abbr") else {})}
+    data = [{"id": t["id"], "f": t["field"], "sub": t["sub"], "term": t["term"], "desc": t["desc"], **({"abbr": t["abbr"]} if t.get("abbr") else {}), **({"g": 1} if t["id"] in FIGS else {})}
             for t in terms]
     (OUT / "assets" / "terms.js").write_text("window.IP_TERMS = " + json.dumps(data, ensure_ascii=False) + ";\n"
                                              + "window.IP_TEST = " + json.dumps(TEST_COUNTS) + ";\n", encoding="utf-8")

@@ -18,10 +18,12 @@ ITパスポート試験の学習サイト **「ITパスポート用語ドリル�
 ```powershell
 python build.py                         # docs/ を作り直す（エラー・注意が出たら直す）
 python -m http.server 8000 -d docs      # http://localhost:8000 で確認
+python make_figs.py                     # 用語の動く図を作り直す（そのあと build.py）
 ```
 
 - Windows のコンソールは cp932 なので、日本語を出力するスクリプトは `PYTHONIOENCODING=utf-8` を付けて動かす
 - build.py は Python の標準ライブラリだけで動く
+- 用語の **「動く図」**: `make_figs.py` が `static/figs/<用語id>.svg` と `data/figs.json` を作る。FE用語ドリルの make_figs.py をもとにしていて、図の中身は同じ。`IP_IDS` で FE の用語の番号を ITパスポートの番号に置きかえる（2026-10-20 時点で15語）。用語ページの「図で見る」と、4択・書いて答える問題の答えのあとに出る。切り替え（‹ › とステップの点）は `static/assets/fig.js`（FE と同じもの）。FE で図を足したら、make_figs.py をこちらにもコピーして `IP_IDS` に番号を足す
 
 ## 公開までの流れ
 
