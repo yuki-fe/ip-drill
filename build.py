@@ -134,7 +134,10 @@ def page(path, title, desc, body, rel, body_class="", jsonld=None, scripts="", i
 <meta property="og:description" content="{escape(desc)}">
 <meta property="og:url" content="{escape(url)}">
 <meta property="og:site_name" content="{escape(SITE)}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{BASE}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
@@ -266,6 +269,10 @@ def build_home():
   <ul class="field-list">{field_links}</ul>
   <p>すべての用語は<a href="terms/index.html">用語一覧</a>から、1語ずつ解説ページで読めます。</p>
   {fe_section}
+  <h2>出題範囲の見直しについて</h2>
+  <p>IPA の試験制度は2027年度から見直しが予定されており、ITパスポート試験もシラバスが改訂される見込みです。このサイトの用語は今の出題範囲に合わせています。新しいシラバスが決まったら、用語を見直します。</p>
+  <h2>間違いを見つけたら</h2>
+  <p>用語の説明は、運営者が AI の支援を受けて作り、確かめたうえで載せています。説明の誤りや、足りない用語に気づいたら、{contact_html()}から教えてください。</p>
   <p class="muted">試験の仕組みや出題範囲は変わることがあります。受験の前に、試験の実施団体のサイトで最新の情報を確認してください。</p>
 </section>
 """
