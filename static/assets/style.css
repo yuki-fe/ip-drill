@@ -134,7 +134,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, .card:focus-visible 
 .misses li { font-size: .9rem; border-top: 1px solid var(--line); padding-top: 8px; }
 .misses b, .misses a { color: var(--mark); font-weight: 700; }
 
-.search { font: inherit; width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+.search { font: inherit; font-size: 16px; width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
 .list { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
 .row { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding: 12px 16px; border-top: 1px solid var(--line); }
 .row:first-child { border-top: 0; }
@@ -269,7 +269,8 @@ button:focus-visible, input:focus-visible, a:focus-visible, .card:focus-visible 
 
 /* 用語の動く図（make_figs.py・fig.js） */
 .fig-title { font-size: .85rem; color: var(--muted); margin: 0 0 8px; }
-.fig-player { max-width: 640px; outline: none; }
+.fig-player { max-width: 640px; }
+.fig-player:focus:not(:focus-visible) { outline: none; }
 .fig-player svg, .fig-player img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); user-select: none; -webkit-user-select: none; }
 .fig-player:focus-visible svg { outline: 2px solid var(--mark); outline-offset: 2px; }
 .fig-cap { font-weight: 700; margin: 10px 0 6px; min-height: 1.75em; }
